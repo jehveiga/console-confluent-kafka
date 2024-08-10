@@ -1,4 +1,16 @@
 ﻿using Confluent.Kafka;
+using Confluent.Kafka.SyncOverAsync;
+using Confluent.SchemaRegistry;
+using Confluent.SchemaRegistry.Serdes;
+using modelo.schema;
+
+// Configurando a configurando que será passada para gerar o Schema usando o Avro
+var schemaConfig = new SchemaRegistryConfig
+{
+    Url = "http://localhost:8081"
+};
+
+var schemaRegistry = new CachedSchemaRegistryClient(schemaConfig);
 
 var config = new ConsumerConfig
 {
@@ -6,14 +18,16 @@ var config = new ConsumerConfig
     BootstrapServers = "localhost:9092"
 };
 
-using var consumer = new ConsumerBuilder<string, string>(config).Build();
+using var consumer = new ConsumerBuilder<string, Modelo>(config)
+    .SetValueDeserializer(new AvroDeserializer<Modelo>(schemaRegistry).AsSyncOverAsync())
+    .Build();
 
 // Se increvendo na fila
-consumer.Subscribe("topico-teste");
+consumer.Subscribe("modelos");
 
 while (true)
 {
     // Será efetuado a leitura das mensagens, ela será lida uma a uma dentro do looping
     var result = consumer.Consume();
-    Console.WriteLine($"Mensagem: {result.Message.Key} - {result.Message.Value}");
+    Console.WriteLine($"Mensagem: {result.Message.Value.Descricao}");
 }

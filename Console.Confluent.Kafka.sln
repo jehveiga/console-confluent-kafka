@@ -7,11 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.Confluent.Kafka.Pro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.Confluent.Kafka.Consumidor", "Console.Confluent.Kafka.Consumidor\Console.Confluent.Kafka.Consumidor.csproj", "{496C2172-ADC6-496B-9628-09D4BC63B69D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Avros", "Avros", "{4097D9AE-67A2-41A1-8C81-99CEEDC3311D}"
-	ProjectSection(SolutionItems) = preProject
-		Modelo.avsc = Modelo.avsc
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

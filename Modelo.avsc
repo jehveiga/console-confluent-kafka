@@ -1,9 +1,0 @@
-{
-	"namespace": "modelo.schema",
-	"type": "record",
-	"name": "Modelo",
-	"fields": [
-		{"name": "id", "type": "string"},
-		{"name": "descricao", "type": "string"}
-	]
-}
