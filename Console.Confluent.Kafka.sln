@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Confluent.Kafka.Produtor", "Console.Confluent.Kafka.Produtor\Console.Confluent.Kafka.Produtor.csproj", "{7557D618-04CE-4C82-B328-3F2223B9FB18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.Confluent.Kafka.Produtor", "Console.Confluent.Kafka.Produtor\Console.Confluent.Kafka.Produtor.csproj", "{7557D618-04CE-4C82-B328-3F2223B9FB18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Confluent.Kafka.Consumidor", "Console.Confluent.Kafka.Consumidor\Console.Confluent.Kafka.Consumidor.csproj", "{496C2172-ADC6-496B-9628-09D4BC63B69D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.Confluent.Kafka.Consumidor", "Console.Confluent.Kafka.Consumidor\Console.Confluent.Kafka.Consumidor.csproj", "{496C2172-ADC6-496B-9628-09D4BC63B69D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Avros", "Avros", "{4097D9AE-67A2-41A1-8C81-99CEEDC3311D}"
+	ProjectSection(SolutionItems) = preProject
+		Modelo.avsc = Modelo.avsc
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
